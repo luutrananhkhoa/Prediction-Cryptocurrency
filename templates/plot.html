@@ -1,0 +1,64 @@
+
+<html>
+<!doctype html>
+<title>Predict Crypto INR</title>
+
+<head>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/stayles.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link  href="./logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,500&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script>
+  <script type="text/javascript">
+  window.onload = function () {
+    document.getElementById("loader").style.display = "none"
+  }
+  </script>
+</head>
+<header>
+  <div class="header">
+    <img src="../static/logo-01.png" class="logo" alt="DSAD"/>
+    <!-- <a class="logo">ONE PIECE </a> -->
+    <div class="header-right">
+      <a href="#">PREDICTION CYPTOCURRENCY</a>
+    </div>
+    <hr class="header-hr">
+  </div>
+  
+</header>
+<body>
+<div class="row center">
+  <div class="column hidden">
+  </div>
+</div>
+<div class="center">
+  <form class="form-inline" method="GET" action="/">
+    <!-- <label class="label">Select Ticker & Algorithm :</label> -->
+    <select name="ticker" id="ticker" class="label">
+      <option value="BTC-USD">BTC-USD</option>
+      <option value="ETH-USD">ETH-USD</option>
+      <option value="BNB-USD">BNB-USD</option>
+      <option value="USDT-USD">USDT-USD</option>
+      <option value="SOL-USD">SOL-USD</option>
+      <option value="XRP-USD">XRP-USD</option>
+      <option value="DOGE-USD">DOGE-USD</option>
+      <option value="DAI-USD">DAI-USD</option>
+    </select>
+    <select name="type" id="type" class="label">
+      <option value="LSTM">LSTM</option>
+    </select>
+    <button type="button" onclick="show_plot()">View</button>
+  </form>
+
+
+
+</div>
+<div class="loader" id="loader"></div>
+
+<div id="chartContainer" style="height: 400px; max-width: 920px; margin: 0px auto;"></div>
+
+</body>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</html>
